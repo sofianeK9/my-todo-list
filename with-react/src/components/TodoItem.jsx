@@ -3,7 +3,7 @@ import './TodoItem.css';
 
 function TodoItem({ todo, onToggle, onDelete }) {
   return (
-    <li className="todo-item">
+    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
       <input
         className="todo-item-checkbox"
         type="checkbox"
@@ -11,11 +11,11 @@ function TodoItem({ todo, onToggle, onDelete }) {
         onChange={() => onToggle(todo.id)}
       />
       <span
-        className={`todo-item-text ${todo.completed ? 'completed' : ''}`}
+        className="todo-item-text"
       >
         {todo.text}
       </span>
-      <button className="todo-item-delete" onClick={() => onDelete(todo.id)}>Delete</button>
+      <button className="todo-item-delete" onClick={() => onDelete(todo.id)}>×</button>
     </li>
   );
 }

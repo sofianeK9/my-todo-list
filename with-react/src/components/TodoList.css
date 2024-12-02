@@ -1,42 +1,33 @@
 .todo-list {
   max-width: 500px;
-  margin: 2rem auto;
-  padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.todo-list-title {
-  text-align: left;
-  color: #333;
-  margin-bottom: 1.5rem;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .todo-list-form {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .todo-list-input {
   flex: 1;
-  padding: 0.5rem;
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
 .todo-list-submit {
-  padding: 0.5rem 1rem;
-  background-color: #0066cc;
-  color: white;
+  padding: 8px 16px;
+  background-color: #61dafb;
+  color: #20232a;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .todo-list-submit:hover {
-  background-color: #0052a3;
+  background-color: #4fa8c7;
 }
 
 .todo-list-items {
@@ -45,8 +36,11 @@
 }
 
 .todo-list-empty {
-  text-align: left;
-  color: #666;
+  text-align: center;
+  color: #61dafb;
   font-style: italic;
-  padding: .8rem 0;
+  padding: 20px;
+  background-color: #282c34;
+  border-radius: 4px;
+  margin-top: 20px;
 }

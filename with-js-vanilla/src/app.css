@@ -1,12 +1,12 @@
-.app {
+#app {
   font-family: Arial, sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.app-title {
+h1 {
   text-align: center;
-  color: #35495e;
+  color: #2c3e50;
   margin-bottom: 30px;
 }

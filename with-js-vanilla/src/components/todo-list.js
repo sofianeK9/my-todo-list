@@ -1,13 +1,12 @@
 import './style.css'
 import './todo-item.js'
 
-class TodoList extends HTMLElement {
+export class TodoList extends HTMLElement {
   constructor() {
     super()
     this.todos = JSON.parse(localStorage.getItem('todos')) || []
     this.attachShadow({ mode: 'open' })
     this.render()
-    this.addEventListeners()
   }
 
   connectedCallback() {

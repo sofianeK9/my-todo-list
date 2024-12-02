@@ -40,20 +40,21 @@ function TodoList() {
 
   return (
     <div className="todo-list">
-      <h2 className="todo-list-title">Mes choses à faire</h2>
       <form className="todo-list-form" onSubmit={handleSubmit}>
         <input
           className="todo-list-input"
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Add a new todo"
+          placeholder="What needs to be done?"
         />
         <button className="todo-list-submit" type="submit">Add</button>
       </form>
       <ul className="todo-list-items">
         {todos.length === 0 ? (
-          <li className="todo-list-empty">Aucune tâche pour le moment</li>
+          <li className="todo-list-empty">
+            No todos yet! Add one to get started.
+          </li>
         ) : (
           todos.map((todo) => (
             <TodoItem

@@ -1,17 +1,18 @@
 <template>
   <div class="todo-list">
-    <div class="add-todo">
+    <form class="todo-list-form" @submit.prevent="addTodo">
       <input 
+        class="todo-list-input"
         :value="newTodo"
         @input="newTodo = $event.target.value"
         @keyup.enter="addTodo"
         type="text" 
-        placeholder="Add a new todo..."
+        placeholder="What needs to be done?"
       >
-      <button @click="addTodo">Add</button>
-    </div>
+      <button class="todo-list-submit" type="submit">Add</button>
+    </form>
     
-    <ul class="todos" v-if="todos.length">
+    <ul class="todo-list-items" v-if="todos.length">
       <TodoItem
         v-for="todo in todos"
         :key="todo.id"
@@ -20,7 +21,7 @@
         @remove="removeTodo(todo)"
       />
     </ul>
-    <p v-else class="empty-state">
+    <p v-else class="todo-list-empty">
       No todos yet! Add one to get started.
     </p>
   </div>
@@ -67,38 +68,38 @@ const removeTodo = (todoToRemove) => {
   padding: 20px;
 }
 
-.add-todo {
+.todo-list-form {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.add-todo input {
+.todo-list-input {
   flex: 1;
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-button {
+.todo-list-submit {
   padding: 8px 16px;
-  background-color: #4CAF50;
+  background-color: #42b883;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
+.todo-list-submit:hover {
+  background-color: #33a06f;
 }
 
-.todos {
+.todo-list-items {
   list-style: none;
   padding: 0;
 }
 
-.empty-state {
+.todo-list-empty {
   text-align: center;
   color: #666;
   font-style: italic;

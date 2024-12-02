@@ -1,10 +1,10 @@
 <script setup>
-import TodoList from './components/TodoList.vue'
+import TodoList from '@/components/TodoList.vue'
 </script>
 
 <template>
   <div class="app">
-    <h1>Vue Todo List</h1>
+    <h1 class="app-title">Vue Todo List</h1>
     <TodoList />
   </div>
 </template>
@@ -17,9 +17,9 @@ import TodoList from './components/TodoList.vue'
   padding: 20px;
 }
 
-h1 {
+.app-title {
   text-align: center;
-  color: #2c3e50;
+  color: #35495e;
   margin-bottom: 30px;
 }
 </style>
