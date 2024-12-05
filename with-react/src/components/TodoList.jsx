@@ -4,7 +4,7 @@ import './TodoList.css';
 
 function readFromLocaleStorage() {
   const todos = localStorage.getItem('todos');
-  console.log(todos)
+  console.log(todos);
   return todos ? JSON.parse(todos) : [];
 }
 
@@ -16,7 +16,7 @@ function TodoList() {
   const [todos, setTodos] = useState(readFromLocaleStorage());
   const [inputValue, setInputValue] = useState('');
 
-  useEffect(() => writeToLocaleStorage(todos), [todos])
+  useEffect(() => writeToLocaleStorage(todos), [todos]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +38,9 @@ function TodoList() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // Calcul du nombre de tâches restantes
+  const remainingTasks = todos.filter((todo) => !todo.completed).length;
+
   return (
     <div className="todo-list">
       <form className="todo-list-form" onSubmit={handleSubmit}>
@@ -50,6 +53,12 @@ function TodoList() {
         />
         <button className="todo-list-submit" type="submit">Add</button>
       </form>
+      <div className="todo-list-counter">
+        {remainingTasks === 1
+          ? `${remainingTasks} task remaining`
+          : `${remainingTasks} tasks remaining`}
+      </div>
+      
       <ul className="todo-list-items">
         {todos.length === 0 ? (
           <li className="todo-list-empty">
