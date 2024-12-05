@@ -63,7 +63,7 @@ function TodoList() {
           ? `${remainingTasks} task remaining`
           : `${remainingTasks} tasks remaining`}
       </div>
-      
+      <button>Clear completed</button>
       <ul className="todo-list-items">
         {todos.length === 0 ? (
           <li className="todo-list-empty">
