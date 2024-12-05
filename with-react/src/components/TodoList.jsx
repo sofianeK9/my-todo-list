@@ -54,6 +54,11 @@ function TodoList() {
         <button className="todo-list-submit" type="submit">Add</button>
       </form>
       <div className="todo-list-counter">
+      <select>
+        <option>All</option>
+        <option>Active</option>
+        <option>Complete</option>
+      </select>
         {remainingTasks === 1
           ? `${remainingTasks} task remaining`
           : `${remainingTasks} tasks remaining`}
